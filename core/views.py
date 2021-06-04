@@ -351,6 +351,7 @@ class HomeView(ListView):
     template_name = "home.html"
 
 
+
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
