@@ -2,36 +2,37 @@
 
 {% block content %}
 
+{% load static %}
+
+
   <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+     <a href="/">Home</a> / <span class="lime-text">{{ object.title }}</span>
+    </div>
     <div class="container dark-grey-text mt-5">
 
       <!--Grid row-->
       <div class="row wow fadeIn">
-
+        <!-- media_root/{{object.image}} -->
         <!--Grid column-->
-        <div class="col-md-6 mb-4">
-
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+        <div class="col-md-6 mb-4 border-custom">
+          <img src="{{object.image.url}}" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4 border-custom">
 
           <!--Content-->
           <div class="p-4">
 
-            <div class="mb-3">
-              <a href="">
-                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
-              </a>
-            </div>
+            <h4 class="orange-text">{{ object.title }}</h4>
 
             <p class="lead">
               {% if object.discount_price %}
               <span class="mr-1">
-                <del>${{ object.price }}</del>
+                <del class="red-text">${{ object.price }}</del>
               </span>
               <span>${{ object.discount_price }}</span>
               {% else %}
@@ -42,6 +43,12 @@
             <p class="lead font-weight-bold">Description</p>
 
             <p>{{ object.description }}</p>
+            <div class="mb-3">
+              <a href="">
+               Catalog: <span class="badge red mr-1">{{ object.get_category_display }}</span>
+              </a>
+            </div>
+
 
             {% comment %} <form class="d-flex justify-content-left">
               <!-- Default input -->
@@ -52,11 +59,11 @@
               </button>
 
             </form> {% endcomment %}
-            <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+            <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p btn-custom">
               Add to cart
               <i class="fas fa-shopping-cart ml-1"></i>
             </a>
-            <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+            <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p btn-custom">
               Remove from cart
             </a>
 
@@ -79,9 +86,7 @@
 
           <h4 class="my-4 h4">Additional information</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+          <p>SALE FOR YOU</p>
 
         </div>
         <!--Grid column-->
@@ -95,7 +100,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+          <img src="https://cdn3.yame.vn/pimg/ao-thun-tn-tc-van-hien-chi-bang-min2-0020009/b47ca88d-83da-cf01-0635-00179a4f447a.jpg?w=800" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -103,7 +108,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+          <img src="https://cdn3.yame.vn/cimg/qua-tang-mien-phi/33181116-e676-0100-78ff-0017d2c5ac31.jpg?w=800" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -111,7 +116,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+          <img src="https://cdn3.yame.vn/cimg/sale-so-mi-50/9f44f8b1-7919-0500-e2b6-0017deb04863.jpg?w=800" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
